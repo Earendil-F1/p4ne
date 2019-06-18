@@ -13,9 +13,9 @@ ex_Temp = list(map(getvalue, ws['B'][1:]))
 ex_RelTemp = list(map(getvalue, ws['C'][1:]))
 ex_Activity = list(map(getvalue, ws['D'][1:]))
 
-pyplot.plot (ex_Year, ex_Temp)
-pyplot.plot (ex_Year, ex_RelTemp)
-pyplot.plot (ex_Year, ex_Activity)
+pyplot.plot(ex_Year, ex_Temp)
+pyplot.plot(ex_Year, ex_RelTemp)
+pyplot.plot(ex_Year, ex_Activity)
 
 pyplot.xlabel('Год')
 pyplot.xlabel('Значение')
