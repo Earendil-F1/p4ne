@@ -6,12 +6,12 @@ IPADDR_FIRST_OCTET_END = 223
 NETS_NUMBER = 100
 
 def prefix_generator():
-    pref =  '%s.%s.%s.%s' % (randint(IPADDR_FIRST_OCTET_START, IPADDR_FIRST_OCTET_END),
+    addr =  '%s.%s.%s.%s' % (randint(IPADDR_FIRST_OCTET_START, IPADDR_FIRST_OCTET_END),
                              randint(0, 255),
                              randint(0, 255),
                              0)
     mask = randint(8, 24)
-    return (IPv4Network ((pref, mask), strict=False)) # Automatically converts host bits to 0s
+    return (IPv4Network ((addr, mask), strict=False)) # Automatically converts host bits to 0s
 
 class IPv4RandomNetwork(IPv4Network):
     def __init__(self):
