@@ -17,9 +17,8 @@ class IPv4RandomNetwork(IPv4Network):
     def __init__(self):
         prefix = ''
         while True:
-            tmppref = IPv4Network(prefix_generator())
-            if (not tmppref.is_private):
-                prefix = tmppref
+            prefix = IPv4Network(prefix_generator())
+            if (not prefix.is_private):
                 break
         super().__init__(prefix)
     def key_value(self):
