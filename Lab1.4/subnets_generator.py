@@ -6,7 +6,7 @@ IPADDR_FIRST_OCTET_END = 223
 NETS_NUMBER = 100
 
 def prefix_generator():
-    addr =  '%s.%s.%s.%s' % (randint(IPADDR_FIRST_OCTET_START, IPADDR_FIRST_OCTET_END),
+    addr = '%s.%s.%s.%s' % (randint(IPADDR_FIRST_OCTET_START, IPADDR_FIRST_OCTET_END),
                              randint(0, 255),
                              randint(0, 255),
                              0)
