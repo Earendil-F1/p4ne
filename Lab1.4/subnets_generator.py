@@ -22,12 +22,14 @@ class IPv4RandomNetwork(IPv4Network):
                 break
         super().__init__(prefix)
     def key_value(self):
-        # Should return one value to sort prefixes by mask (ascending) then by network address (ascending)
+        # Should return one value to sort prefixes by mask (ascending), then by network address (ascending)
         return (self.prefixlen * (10**10)) + int(self.network_address) # int('255.255.255.255') = 4294967295
 
 spoof_nets = list()
 for i in range(0, NETS_NUMBER):
-    spoof_nets.append(IPv4RandomNetwork())
+    next_net = IPv4RandomNetwork()
+    if (next_net not in spoof_nets):
+        spoof_nets.append(next_net)
 
 spoof_nets = sorted(spoof_nets, key=IPv4RandomNetwork.key_value)
 for i in range(0, NETS_NUMBER):
