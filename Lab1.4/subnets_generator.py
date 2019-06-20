@@ -32,7 +32,6 @@ for i in range(0, NETS_NUMBER):
         next_net = IPv4RandomNetwork()
         for j in range(0, cur_len):
             if (next_net.overlaps(spoof_nets[j])):
-                print ('test')
                 break
         else:
             spoof_nets.append(next_net)
