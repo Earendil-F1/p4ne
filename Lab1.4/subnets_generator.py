@@ -23,7 +23,7 @@ class IPv4RandomNetwork(IPv4Network):
             if (not tmppref.is_private):
                 prefix = tmppref
                 break
-        IPv4Network.__init__(self, prefix)
+        super().__init__(prefix)
     def key_value(self):
         # Should return one value to sort prefixes by mask (ascending) then by network address (ascending)
         return (self.prefixlen * (10**10)) + int(self.network_address) # int('255.255.255.255) = 4294967295
