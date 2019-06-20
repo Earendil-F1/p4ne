@@ -27,9 +27,16 @@ class IPv4RandomNetwork(IPv4Network):
 
 spoof_nets = list()
 for i in range(0, NETS_NUMBER):
-    next_net = IPv4RandomNetwork()
-    if (next_net not in spoof_nets):
-        spoof_nets.append(next_net)
+    cur_len = len(spoof_nets)
+    while (cur_len == len(spoof_nets)):
+        next_net = IPv4RandomNetwork()
+        for j in range(0, cur_len):
+            if (next_net.overlaps(spoof_nets[j])):
+                print ('test')
+                break
+        else:
+            spoof_nets.append(next_net)
+
 
 spoof_nets = sorted(spoof_nets, key=IPv4RandomNetwork.key_value)
 for i in range(0, NETS_NUMBER):
