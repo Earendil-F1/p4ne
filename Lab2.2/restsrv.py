@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def mainpage():
-    return ('<a href=\"%s%s\">%s</a><br/>' % (request.base_url, 'config', 'Config files'))
+    return ('<a href=\"%s%s\">%s</a><br/>' % (request.base_url, 'config', 'Devices'))
 
 @app.route('/config')
 def print_hostnames():
